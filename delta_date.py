@@ -1,11 +1,11 @@
-from datetime import datetime, timedelta
+from datetime import datetime, date, timedelta 
 
-def get_days_from_today(date):
+def get_days_from_today(date_string):
     try:
-        user_date = datetime.strptime(date, '%Y-%m-%d')
-        current_date = datetime.today()
-        delta = user_date - current_date
+        user_date = datetime.strptime(date_string, "%Y-%m-%d").date()
+        current_date = date.today()
+        delta = user_date - current_date  
         return delta.days
     except ValueError:
         return("Неправильний формат дати")
-print(get_days_from_today("2020-10-12"))
+print(get_days_from_today("2025-05-25"))
